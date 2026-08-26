@@ -25,7 +25,7 @@ export const hotel: HotelConfig = {
   latitude: 28.2045,
   longitude: 76.8222,
   mapEmbedUrl:
-    "https://maps.google.com/maps?q=Plot+no+102A,+Alwar+-+Bhiwadi+Rd,+opposite+krish+icon,+Bhiwadi,+Tatarpur,+Rajasthan+301018&t=&z=17&ie=UTF8&iwloc=&output=embed",
+    "https://maps.google.com/maps?width=100%25&height=600&hl=en&q=hotel%20o%20namaste%20-%20Plot%20no%20102A,%20Alwar%20-%20Bhiwadi%20Rd,%20opposite%20krish%20icon,%20societynull,%20Bhiwadi,%20Tatarpur,%20Rajasthan%20301018+(Hotel%20O%20Namaste)&t=&z=16&ie=UTF8&iwloc=near&output=embed",
   socials: {
     instagram: "https://instagram.com",
     facebook: "https://facebook.com",
@@ -49,5 +49,5 @@ export function getMailtoLink(subject = "Room Enquiry - Hotel O Namaste"): strin
 }
 
 export function getGoogleMapsLink(): string {
-  return "https://www.google.com/maps/search/?api=1&query=Plot+no+102A,+Alwar+-+Bhiwadi+Rd,+opposite+krish+icon,+Bhiwadi,+Tatarpur,+Rajasthan+301018";
+  return "https://www.google.com/maps/search/?api=1&query=hotel+o+namaste+-+Plot+no+102A,+Alwar+-+Bhiwadi+Rd,+opposite+krish+icon,+societynull,+Bhiwadi,+Tatarpur,+Rajasthan+301018";
 }

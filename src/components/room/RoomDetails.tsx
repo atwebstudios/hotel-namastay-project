@@ -5,6 +5,7 @@ import { room } from "@/data/room";
 import { hotel } from "@/data/hotel";
 import { useBookingModal } from "@/context/BookingModalContext";
 import { Users, Bed, Maximize2, Bath, Clock, ShieldCheck } from "lucide-react";
+import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
 export function RoomDetails() {
   const { openBooking } = useBookingModal();
@@ -65,7 +66,7 @@ export function RoomDetails() {
                     <Users className="w-4 h-4 text-[#006951]" />
                     <span>Capacity</span>
                   </div>
-                  <span className="font-medium">Up to {room.capacity.maxGuests} Guests</span>
+                  <span className="font-medium">Up to <AnimatedCounter value={room.capacity.maxGuests} /> Guests</span>
                 </div>
 
                 <div className="py-3.5 flex items-center justify-between">
@@ -81,7 +82,7 @@ export function RoomDetails() {
                     <Maximize2 className="w-4 h-4 text-[#006951]" />
                     <span>Room Area</span>
                   </div>
-                  <span className="font-medium">{room.roomSize}</span>
+                  <span className="font-medium"><AnimatedCounter value={300} suffix=" sq.ft" /></span>
                 </div>
 
                 <div className="py-3.5 flex items-center justify-between">

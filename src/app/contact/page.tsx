@@ -80,20 +80,24 @@ export default function ContactPage() {
             </div>
 
             {/* Right: Redesigned Map Card */}
-            <div id="map" className="lg:col-span-6">
+            <div id="map" className="lg:col-span-6 lg:sticky lg:top-28 lg:mt-6">
               <div className="bg-white rounded-2xl border border-[#bdc9c2] shadow-md overflow-hidden">
                 {/* Map Iframe with Hotel Name Overlay */}
-                <div className="relative w-full h-[340px] sm:h-[400px] bg-[#ebefeb]">
+                <div className="relative w-full h-[340px] sm:h-[400px] bg-[#ebefeb] overflow-hidden">
                   <iframe
                     title="Hotel O Namaste Location Map"
                     src={hotel.mapEmbedUrl}
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
+                    style={{ 
+                      border: 0,
+                      position: 'absolute',
+                      top: '-165px',
+                      left: 0,
+                      width: '100%',
+                      height: 'calc(100% + 330px)'
+                    }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    className="w-full h-full"
                   />
 
                   {/* Top-Left Clickable Hotel Name Badge */}

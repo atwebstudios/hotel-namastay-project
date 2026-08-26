@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { BookingModal } from "@/components/booking/BookingModal";
 import { Toaster } from "sonner";
 import { hotel } from "@/data/hotel";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -130,6 +131,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <BookingModal />
+          <CustomCursor />
           <Toaster position="top-right" richColors theme="light" />
         </BookingModalProvider>
       </body>

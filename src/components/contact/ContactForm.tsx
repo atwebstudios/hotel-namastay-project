@@ -94,6 +94,7 @@ export function ContactForm() {
         <Input
           label="Full Name *"
           placeholder="e.g. Rahul Sharma"
+          autoComplete="name"
           error={errors.fullName?.message}
           {...register("fullName")}
         />
@@ -102,6 +103,7 @@ export function ContactForm() {
           label="Phone Number *"
           type="tel"
           placeholder="e.g. +91 98765 43210"
+          autoComplete="tel"
           error={errors.phone?.message}
           {...register("phone")}
         />
@@ -111,6 +113,7 @@ export function ContactForm() {
         label="Email Address *"
         type="email"
         placeholder="e.g. rahul@example.com"
+        autoComplete="email"
         error={errors.email?.message}
         {...register("email")}
       />
@@ -118,6 +121,7 @@ export function ContactForm() {
       <Input
         label="Subject *"
         placeholder="e.g. Booking availability enquiry for wedding group"
+        autoComplete="off"
         error={errors.subject?.message}
         {...register("subject")}
       />

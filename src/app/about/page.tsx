@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BookingCTA } from "@/components/home/BookingCTA";
 import { ChevronRight, Sparkles, Clock, MapPin, ArrowRight } from "lucide-react";
+import { ParallaxImage } from "@/components/ui/ParallaxImage";
 
 export const metadata: Metadata = {
   title: "About Us | Hotel O Namaste",
@@ -47,17 +48,11 @@ export default function AboutPage() {
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left: Large Photo */}
-            <div className="lg:col-span-6 relative h-[380px] sm:h-[500px] rounded-xl overflow-hidden shadow-md border border-[#bdc9c2]">
-              <Image
-                src="/images/hotel/exterior.jpg"
-                alt="Hotel O Namaste Exterior View"
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
+            <ParallaxImage
+              src="/images/hotel/exterior.jpg"
+              alt="Hotel O Namaste Exterior View"
+              className="lg:col-span-6 h-[380px] sm:h-[500px] rounded-xl shadow-md border border-[#bdc9c2]"
+            />
 
             {/* Right: Headline & Narrative */}
             <div className="lg:col-span-6 space-y-6">
@@ -90,15 +85,29 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="lg:col-span-6 relative h-[360px] sm:h-[440px] rounded-xl overflow-hidden shadow-sm border border-[#bdc9c2]">
-              <Image
-                src="/images/hotel/reception.jpg"
-                alt="Hotel O Namaste Reception"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
+            <ParallaxImage
+              src="/images/hotel/reception.jpg"
+              alt="Hotel O Namaste Reception"
+              className="lg:col-span-6 h-[360px] sm:h-[440px] rounded-xl shadow-sm border border-[#bdc9c2]"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* The Vision / Quote */}
+      <section className="py-20 sm:py-28 bg-[#fdfdfc] border-y border-[#bdc9c2]/30 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-gold/30 to-transparent" />
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 max-w-4xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#f6faf6] border border-[#bdc9c2]/50 mb-8 shadow-sm">
+            <span className="font-display text-4xl text-accent-gold leading-none mt-4">&ldquo;</span>
+          </div>
+          <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-[#181d1b] leading-relaxed italic mb-10">
+            Our vision was never to just build rooms, but to craft a quiet sanctuary where every traveler feels genuinely cared for. True hospitality is an art of subtleties.
+          </h2>
+          <div className="flex items-center justify-center gap-4">
+            <div className="w-12 h-px bg-accent-gold/50" />
+            <span className="font-sans font-semibold text-[#006951] uppercase tracking-[0.2em] text-xs">The Founders</span>
+            <div className="w-12 h-px bg-accent-gold/50" />
           </div>
         </div>
       </section>
@@ -155,15 +164,12 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="lg:col-span-7 relative h-[320px] sm:h-[400px] rounded-xl overflow-hidden shadow-sm border border-[#bdc9c2]">
-              <Image
-                src="/images/room/room-02.webp"
-                alt="Hotel O Namaste Room Ambience"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 58vw"
-              />
-            </div>
+            <ParallaxImage
+              src="/images/room/room-02.webp"
+              alt="Hotel O Namaste Room Ambience"
+              className="lg:col-span-7 h-[320px] sm:h-[400px] rounded-xl shadow-sm border border-[#bdc9c2]"
+              sizes="(max-width: 1024px) 100vw, 58vw"
+            />
           </div>
 
           {/* Room Callout Card */}
@@ -187,15 +193,11 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-6 relative h-[240px] sm:h-[300px] rounded-lg overflow-hidden border border-[#bdc9c2]">
-              <Image
-                src="/images/room/room-01.webp"
-                alt="Deluxe Room Interior"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
+            <ParallaxImage
+              src="/images/room/room-01.webp"
+              alt="Deluxe Room Interior"
+              className="lg:col-span-6 h-[240px] sm:h-[300px] rounded-lg border border-[#bdc9c2]"
+            />
           </div>
         </div>
       </section>

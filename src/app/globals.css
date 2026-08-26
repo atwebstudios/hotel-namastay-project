@@ -23,6 +23,8 @@
     --secondary-container: #c5ebdb;
     --tertiary: #93443b;
     --border: #bdc9c2;
+    --accent-gold: #d4af37;
+    --accent-champagne: #f7e7ce;
   }
 }
 
@@ -49,6 +51,8 @@
   --color-secondary-container: #c5ebdb;
   --color-tertiary: #93443b;
   --color-border-subtle: #bdc9c2;
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-champagne: var(--accent-champagne);
 }
 
 html {
@@ -94,6 +98,15 @@ body {
 /* Subtle border tokens */
 .border-subtle {
   border-color: #bdc9c2;
+}
+
+/* Premium Mesh / Subtle Gradient Background */
+.bg-mesh-premium {
+  background-color: var(--surface);
+  background-image: radial-gradient(at 0% 0%, hsla(164, 100%, 97%, 1) 0px, transparent 50%),
+                    radial-gradient(at 100% 0%, hsla(43, 67%, 95%, 1) 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, hsla(164, 100%, 97%, 1) 0px, transparent 50%),
+                    radial-gradient(at 0% 100%, hsla(43, 67%, 95%, 1) 0px, transparent 50%);
 }
 
 /* Custom scrollbars */

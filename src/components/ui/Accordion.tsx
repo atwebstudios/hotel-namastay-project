@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from "framer-motion";
 
 export interface AccordionItemProps {
   id: string;
@@ -23,13 +24,13 @@ export function AccordionItem({
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-4.5 sm:py-5 flex items-center justify-between text-left font-medium text-[#181d1b] hover:text-[#006951] transition-colors gap-4 cursor-pointer select-none"
+        className="w-full py-4.5 sm:py-5 flex items-center justify-between text-left font-medium text-[#181d1b] hover:text-accent-gold transition-colors gap-4 cursor-pointer select-none group"
         aria-expanded={isOpen}
       >
-        <span className={cn("text-[15px] sm:text-base font-medium pr-4 transition-colors", isOpen && "text-[#006951]")}>
+        <span className={cn("text-[15px] sm:text-base font-medium pr-4 transition-colors", isOpen ? "text-[#006951]" : "group-hover:text-accent-gold")}>
           {title}
         </span>
-        <div className={cn("w-6 h-6 rounded-full flex items-center justify-center transition-colors shrink-0", isOpen ? "bg-[#c5ebdb]/50 text-[#006951]" : "text-[#6e7a74]")}>
+        <div className={cn("w-6 h-6 rounded-full flex items-center justify-center transition-colors shrink-0", isOpen ? "bg-accent-champagne/50 text-[#006951]" : "text-[#6e7a74] group-hover:text-accent-gold")}>
           <ChevronDown
             className={cn(
               "w-4 h-4 transition-transform duration-300 ease-in-out",
@@ -39,19 +40,22 @@ export function AccordionItem({
         </div>
       </button>
 
-      {/* Smooth expanding/collapsing height & opacity animation */}
-      <div
-        className={cn(
-          "grid transition-all duration-300 ease-in-out overflow-hidden",
-          isOpen
-            ? "grid-rows-[1fr] opacity-100 pb-4 pt-0.5"
-            : "grid-rows-[0fr] opacity-0 pb-0 pt-0"
+      {/* Smooth expanding/collapsing height & opacity animation with Framer Motion */}
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="pb-5 text-xs sm:text-sm text-[#3e4944] leading-relaxed">
+              {children}
+            </div>
+          </motion.div>
         )}
-      >
-        <div className="min-h-0 overflow-hidden text-xs sm:text-sm text-[#3e4944] leading-relaxed">
-          {children}
-        </div>
-      </div>
+      </AnimatePresence>
     </div>
   );
 }

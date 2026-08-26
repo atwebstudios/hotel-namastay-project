@@ -79,46 +79,82 @@ const iconMap: Record<string, LucideIcon> = {
   Bed,
 };
 
+import { motion, AnimatePresence, Variants } from "framer-motion";
+
 export function Facilities() {
   const [showAllCategories, setShowAllCategories] = useState(false);
 
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
   return (
-    <section id="facilities" className="py-20 sm:py-28 bg-[#f6faf6]">
-      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+    <section id="facilities" className="py-20 sm:py-28 bg-mesh-premium relative overflow-hidden">
+      {/* Decorative Blur Accent */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent-champagne/20 rounded-full blur-3xl -z-10 pointer-events-none" />
+      
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         {/* Heading */}
-        <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <span className="label-caps">AMENITIES & FACILITIES</span>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-2xl mx-auto mb-14 space-y-3"
+        >
+          <span className="label-caps text-[#006951]">AMENITIES & FACILITIES</span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-[#181d1b]">
             Thoughtfully Equipped for Every Stay
           </h2>
           <p className="text-[#6e7a74] text-sm sm:text-base">
             From 24-hour reception and sanitized rooms to high-speed Wi-Fi and in-room comforts.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Featured Facilities 6-Card Grid (3 Columns x 2 Rows) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {/* Featured Facilities 6-Card Grid */}
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+        >
           {facilities.map((f) => {
             const IconComponent = iconMap[f.iconName] || Sparkles;
 
             return (
-              <div
+              <motion.div
+                variants={itemVariants}
+                whileHover={{ y: -5, scale: 1.02 }}
                 key={f.id}
-                className="bg-white p-5 rounded-lg border border-[#bdc9c2]/60 hover:border-[#006951]/60 transition-all duration-200 group shadow-2xs hover:shadow-sm"
+                className="bg-white/80 backdrop-blur-md p-6 rounded-xl border border-white/60 hover:border-accent-gold/40 transition-all duration-300 group shadow-soft hover:shadow-[0_15px_35px_rgba(212,175,55,0.15)] relative overflow-hidden"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#f0f5f1] group-hover:bg-[#c5ebdb] flex items-center justify-center text-[#006951] mb-3.5 transition-colors">
-                  <IconComponent className="w-5 h-5" />
+                {/* Subtle Hover Glow */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-accent-champagne/0 via-accent-champagne/0 to-accent-champagne/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                
+                <div className="w-12 h-12 rounded-xl bg-[#f0f5f1] group-hover:bg-gradient-to-br group-hover:from-accent-champagne group-hover:to-accent-gold/20 flex items-center justify-center text-[#006951] mb-4 transition-all duration-500">
+                  <IconComponent className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <h3 className="font-semibold text-[13px] sm:text-sm text-[#181d1b] mb-1 group-hover:text-[#006951] transition-colors">
+                <h3 className="font-semibold text-[13px] sm:text-sm text-[#181d1b] mb-1.5 group-hover:text-[#006951] transition-colors relative z-10">
                   {f.title}
                 </h3>
-                <p className="text-[11px] sm:text-xs text-[#6e7a74] leading-relaxed">
+                <p className="text-[11px] sm:text-xs text-[#6e7a74] leading-relaxed relative z-10">
                   {f.description}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Toggleable Full Amenities Breakdown */}
         <div className="bg-white rounded-xl border border-[#bdc9c2]/70 shadow-xs overflow-hidden">

@@ -86,41 +86,24 @@ export function Location() {
           </div>
 
           {/* Right Column: Redesigned Map Card */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 lg:sticky lg:top-28 lg:mt-12">
             <div className="bg-white rounded-2xl border border-[#bdc9c2] shadow-md overflow-hidden">
-              {/* Map Iframe with Hotel Name Overlay */}
-              <div className="relative w-full h-[340px] sm:h-[400px] bg-[#ebefeb]">
+              <div className="relative w-full h-[340px] sm:h-[400px] bg-[#ebefeb] overflow-hidden">
                 <iframe
                   title="Hotel O Namaste Location Map"
                   src={hotel.mapEmbedUrl}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
+                  style={{ 
+                    border: 0,
+                    position: 'absolute',
+                    top: '-165px',
+                    left: 0,
+                    width: '100%',
+                    height: 'calc(100% + 330px)'
+                  }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full"
                 />
-
-                {/* Top-Left Clickable Hotel Name Badge */}
-                <a
-                  href={getGoogleMapsLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-lg px-4 py-2.5 rounded-xl border border-[#dfe4e0] shadow-lg hover:shadow-xl hover:bg-white transition-all group flex items-center gap-3 z-10 cursor-pointer"
-                  title="Open Hotel O Namaste in Google Maps"
-                >
-                  <div className="w-8 h-8 rounded-full bg-[#006951] flex items-center justify-center shrink-0 shadow-sm">
-                    <MapPin className="w-4 h-4 text-white" />
-                  </div>
-                  <div className="text-left">
-                    <div className="font-display font-semibold text-sm text-[#181d1b] group-hover:text-[#006951] transition-colors flex items-center gap-1.5">
-                      Hotel O Namaste
-                      <ArrowUpRight className="w-3.5 h-3.5 text-[#6e7a74] group-hover:text-[#006951] transition-transform group-hover:-translate-y-px group-hover:translate-x-px" />
-                    </div>
-                    <div className="text-[11px] text-[#6e7a74] mt-0.5">Tatarpur, Bhiwadi · Rajasthan</div>
-                  </div>
-                </a>
               </div>
 
               {/* Bottom Bar: Address + Get Directions */}

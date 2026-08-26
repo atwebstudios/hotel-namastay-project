@@ -1,7 +1,11 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Sparkles, Bed, HeartHandshake, Coffee } from "lucide-react";
+
+import { motion, Variants } from "framer-motion";
 
 export function AboutPreview() {
   const highlights = [
@@ -27,68 +31,97 @@ export function AboutPreview() {
     },
   ];
 
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
-    <section className="py-20 sm:py-28 bg-[#f6faf6]">
-      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+    <section className="py-20 sm:py-28 bg-mesh-premium relative overflow-hidden">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Image */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative h-[380px] sm:h-[480px] w-full rounded-xl overflow-hidden border border-[#bdc9c2]/60 shadow-md">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="lg:col-span-6 relative"
+          >
+            <div className="relative h-[380px] sm:h-[480px] w-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,105,81,0.1)] border border-white/60">
               <Image
                 src="/images/hotel/exterior.jpg"
                 alt="Hotel O Namaste Exterior View"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-700 hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-          </div>
+            {/* Decorative Gold Accent Element */}
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent-gold/10 rounded-full blur-2xl -z-10" />
+          </motion.div>
 
           {/* Right Column: Copy & Value Proposition */}
-          <div className="lg:col-span-6 space-y-6">
-            <span className="label-caps block">OUR PHILOSOPHY</span>
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="lg:col-span-6 space-y-6"
+          >
+            <motion.span variants={itemVariants} className="label-caps block text-[#006951]">OUR PHILOSOPHY</motion.span>
             
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-[#181d1b] leading-tight">
+            <motion.h2 variants={itemVariants} className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-[#181d1b] leading-tight">
               Simple Hospitality, <br />
               Thoughtfully Done.
-            </h2>
+            </motion.h2>
 
-            <p className="text-[#3e4944] text-base sm:text-lg leading-relaxed">
+            <motion.p variants={itemVariants} className="text-[#3e4944] text-base sm:text-lg leading-relaxed">
               Hotel O Namaste was created for travelers who appreciate the essentials done right: a tranquil atmosphere, spotless spaces, crisp bedding, and attentive service that feels like home.
-            </p>
+            </motion.p>
 
             {/* Highlights Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
               {highlights.map((h, i) => {
                 const Icon = h.icon;
                 return (
-                  <div
+                  <motion.div
                     key={i}
-                    className="p-4 bg-white rounded-lg border border-[#dfe4e0] shadow-xs"
+                    whileHover={{ y: -3, scale: 1.02 }}
+                    className="p-5 bg-white/80 backdrop-blur-sm rounded-xl border border-white shadow-soft transition-all"
                   >
-                    <div className="flex items-center gap-2.5 mb-1.5">
-                      <div className="w-7 h-7 rounded-full bg-[#f0f5f1] flex items-center justify-center text-[#006951]">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 rounded-full bg-accent-champagne/40 flex items-center justify-center text-[#006951]">
                         <Icon className="w-4 h-4" />
                       </div>
                       <h4 className="font-medium text-sm text-[#181d1b]">{h.title}</h4>
                     </div>
                     <p className="text-xs text-[#6e7a74] leading-relaxed">{h.desc}</p>
-                  </div>
+                  </motion.div>
                 );
               })}
-            </div>
+            </motion.div>
 
             {/* CTA Link */}
-            <div className="pt-4">
+            <motion.div variants={itemVariants} className="pt-6">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#006951] hover:text-[#00513e] group transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#006951] hover:text-accent-gold group transition-colors"
               >
                 <span>Learn more about Hotel O Namaste</span>
-                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
