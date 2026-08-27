@@ -5,7 +5,6 @@ import Image from "next/image";
 import { room } from "@/data/room";
 import { Lightbox } from "@/components/ui/Lightbox";
 import { Images } from "lucide-react";
-
 import { motion, Variants } from "framer-motion";
 
 export function RoomGallery() {
@@ -25,9 +24,8 @@ export function RoomGallery() {
     setCurrentIndex((prev) => (prev - 1 + room.images.length) % room.images.length);
   };
 
-  // We display the first 5 images in the signature layout matching Stitch mockup
-  const featured = room.images[0];
-  const gridImages = room.images.slice(1, 5);
+  // We display the first 5 images in a bento-masonry layout
+  const images = room.images.slice(0, 5);
 
   const containerVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -39,71 +37,94 @@ export function RoomGallery() {
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
   };
 
   return (
     <>
-      <section className="pb-12 bg-mesh-premium">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Gallery Container */}
+      <section className="pb-16 pt-8 bg-mesh-premium relative z-10">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,105,81,0.1)] border border-white/60"
+            className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-3 sm:gap-4 h-[600px] sm:h-[700px] md:h-[600px] relative rounded-2xl overflow-hidden shadow-xl"
           >
-            {/* Main Featured Photo (Left 6 cols on desktop) */}
+            {/* 1. Large Image (Left, spanning 2 rows and 2 cols) */}
             <motion.div
               variants={itemVariants}
               onClick={() => openPhoto(0)}
-              className="md:col-span-6 relative h-[300px] sm:h-[400px] md:h-[500px] cursor-pointer group overflow-hidden bg-[#ebefeb]"
+              className="md:col-span-2 md:row-span-2 relative h-full cursor-pointer group overflow-hidden bg-[#ebefeb]"
             >
               <Image
-                src={featured}
+                src={images[0]}
                 alt={`${room.name} primary photo`}
                 fill
                 priority
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
             </motion.div>
 
-            {/* 2x2 Grid Photos (Right 6 cols on desktop) */}
-            <div className="md:col-span-6 grid grid-cols-2 gap-3 sm:gap-4 h-[300px] sm:h-[400px] md:h-[500px]">
-              {gridImages.map((img, idx) => {
-                const actualIndex = idx + 1;
-                return (
-                  <motion.div
-                    variants={itemVariants}
-                    key={actualIndex}
-                    onClick={() => openPhoto(actualIndex)}
-                    className="relative w-full h-full cursor-pointer group overflow-hidden bg-[#ebefeb]"
-                  >
-                    <Image
-                      src={img}
-                      alt={`${room.name} photo ${actualIndex + 1}`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-accent-gold/10 transition-colors duration-300" />
-                  </motion.div>
-                );
-              })}
-            </div>
+            {/* 2. Top Middle (1 col, 1 row) */}
+            <motion.div
+              variants={itemVariants}
+              onClick={() => openPhoto(1)}
+              className="hidden md:block relative h-full cursor-pointer group overflow-hidden bg-[#ebefeb]"
+            >
+              <Image
+                src={images[1]}
+                alt={`${room.name} photo 2`}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="25vw"
+              />
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+            </motion.div>
 
-            {/* "View All Photos" Button in bottom corner */}
+            {/* 3. Top Right (1 col, 1 row) */}
+            <motion.div
+              variants={itemVariants}
+              onClick={() => openPhoto(2)}
+              className="hidden md:block relative h-full cursor-pointer group overflow-hidden bg-[#ebefeb]"
+            >
+              <Image
+                src={images[2]}
+                alt={`${room.name} photo 3`}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="25vw"
+              />
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+            </motion.div>
+
+            {/* 4. Bottom Right Wide (Spanning 2 cols, 1 row) */}
+            <motion.div
+              variants={itemVariants}
+              onClick={() => openPhoto(3)}
+              className="hidden md:block md:col-span-2 relative h-full cursor-pointer group overflow-hidden bg-[#ebefeb]"
+            >
+              <Image
+                src={images[3]}
+                alt={`${room.name} photo 4`}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="50vw"
+              />
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+            </motion.div>
+
+            {/* "View All Photos" Button overlay on bottom right */}
             <button
               type="button"
               onClick={() => openPhoto(0)}
-              className="absolute bottom-4 right-4 bg-white/90 hover:bg-white text-[#181d1b] px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold flex items-center gap-2 shadow-lg hover:shadow-[0_8px_25px_rgba(212,175,55,0.25)] backdrop-blur-md border border-white/80 hover:border-accent-gold transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5"
+              className="absolute bottom-6 right-6 bg-white hover:bg-[#f6faf6] text-[#181d1b] px-6 py-3 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-2.5 shadow-[0_10px_30px_rgba(0,0,0,0.15)] hover:shadow-[0_10px_30px_rgba(212,175,55,0.3)] transition-all duration-300 cursor-pointer transform hover:-translate-y-1 group z-10"
             >
-              <Images className="w-4 h-4 text-accent-gold" />
-              <span>View all {room.images.length} photos</span>
+              <Images className="w-4 h-4 text-[#006951] group-hover:text-accent-gold transition-colors" />
+              <span>Show all {room.images.length} photos</span>
             </button>
           </motion.div>
         </div>

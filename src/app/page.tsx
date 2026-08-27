@@ -9,7 +9,6 @@ import { Testimonials } from "@/components/home/Testimonials";
 import { Location } from "@/components/home/Location";
 import { FAQ } from "@/components/home/FAQ";
 import { BookingCTA } from "@/components/home/BookingCTA";
-import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
 
 export const metadata: Metadata = {
   title: "Hotel O Namaste | Comfortable Stay & Direct Booking in Bhiwadi",
@@ -61,9 +60,6 @@ export default function HomePage() {
 
       {/* 9. Booking CTA Banner */}
       <BookingCTA />
-
-      {/* Sticky Mobile CTA Action Bar */}
-      <StickyMobileCTA />
     </div>
   );
 }

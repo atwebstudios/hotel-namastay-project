@@ -8,6 +8,7 @@ import { BookingModal } from "@/components/booking/BookingModal";
 import { Toaster } from "sonner";
 import { hotel } from "@/data/hotel";
 import { CustomCursor } from "@/components/ui/CustomCursor";
+import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -132,6 +133,7 @@ export default function RootLayout({
           <Footer />
           <BookingModal />
           <CustomCursor />
+          <StickyMobileCTA />
           <Toaster position="top-right" richColors theme="light" />
         </BookingModalProvider>
       </body>

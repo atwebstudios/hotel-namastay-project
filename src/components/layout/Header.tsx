@@ -114,7 +114,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => openBooking("Deluxe Room")}
-              className="bg-[#006951] text-white text-xs font-medium px-3 py-2 rounded"
+              className="hidden md:block bg-[#006951] text-white text-xs font-medium px-3 py-2 rounded"
             >
               Enquire
             </button>

@@ -9,7 +9,7 @@ export function AmenitiesDock() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    return scrollY.onChange((latest) => {
+    return scrollY.on("change", (latest) => {
       // Show dock only when scrolling past hero and before footer
       if (latest > 400 && latest < document.body.scrollHeight - 1000) {
         setIsVisible(true);

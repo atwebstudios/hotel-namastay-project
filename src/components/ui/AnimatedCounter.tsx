@@ -16,7 +16,7 @@ export function AnimatedCounter({ value, suffix = "", prefix = "" }: { value: nu
   }, [isInView, spring, value]);
 
   useEffect(() => {
-    return spring.onChange((latest) => {
+    return spring.on("change", (latest) => {
       setDisplayValue(Math.floor(latest));
     });
   }, [spring]);
