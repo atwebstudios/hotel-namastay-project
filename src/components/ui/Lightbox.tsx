@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -21,6 +22,12 @@ export function Lightbox({
   onNext,
   onPrev,
 }: LightboxProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (!isOpen) return;
@@ -43,9 +50,9 @@ export function Lightbox({
     };
   }, [isOpen, handleKeyDown]);
 
-  if (!isOpen || images.length === 0) return null;
+  if (!mounted || !isOpen || images.length === 0) return null;
 
-  return (
+  return createPortal(
     <div
       role="dialog"
       aria-modal="true"
@@ -125,6 +132,7 @@ export function Lightbox({
           </button>
         ))}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
