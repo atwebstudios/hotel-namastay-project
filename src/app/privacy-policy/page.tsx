@@ -5,8 +5,8 @@ import { hotel } from "@/data/hotel";
 import { ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Hotel O Namaste",
-  description: "Privacy policy and data handling guidelines for Hotel O Namaste.",
+  title: "Privacy Policy | Hotel Namastay",
+  description: "Privacy policy and data handling guidelines for Hotel Namastay.",
 };
 
 export default function PrivacyPolicyPage() {

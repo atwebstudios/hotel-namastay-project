@@ -59,8 +59,8 @@ export function AboutPreview() {
           >
             <div className="relative h-[380px] sm:h-[480px] w-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,105,81,0.1)] border border-white/60">
               <Image
-                src="/images/hotel/exterior.jpg"
-                alt="Hotel O Namaste Exterior View"
+                src="/images/hotel/exterior.png"
+                alt="Hotel Namastay Exterior View"
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -86,7 +86,7 @@ export function AboutPreview() {
             </motion.h2>
 
             <motion.p variants={itemVariants} className="text-[#3e4944] text-base sm:text-lg leading-relaxed">
-              Hotel O Namaste was created for travelers who appreciate the essentials done right: a tranquil atmosphere, spotless spaces, crisp bedding, and attentive service that feels like home.
+              Hotel Namastay was created for travelers who appreciate the essentials done right: a tranquil atmosphere, spotless spaces, crisp bedding, and attentive service that feels like home.
             </motion.p>
 
             {/* Highlights Grid */}
@@ -117,7 +117,7 @@ export function AboutPreview() {
                 href="/about"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[#006951] hover:text-accent-gold group transition-colors"
               >
-                <span>Learn more about Hotel O Namaste</span>
+                <span>Learn more about Hotel Namastay</span>
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
               </Link>
             </motion.div>

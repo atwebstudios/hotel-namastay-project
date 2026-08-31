@@ -11,11 +11,11 @@ import { FAQ } from "@/components/home/FAQ";
 import { BookingCTA } from "@/components/home/BookingCTA";
 
 export const metadata: Metadata = {
-  title: "Hotel O Namaste | Comfortable Stay & Direct Booking in Bhiwadi",
+  title: "Hotel Namastay | Comfortable Stay & Direct Booking in Bhiwadi",
   description:
-    "Discover Hotel O Namaste — a serene stay with comfortable rooms, thoughtful facilities, pristine comfort, and personal hospitality in Bhiwadi, Rajasthan.",
+    "Discover Hotel Namastay — a serene stay with comfortable rooms, thoughtful facilities, pristine comfort, and personal hospitality in Bhiwadi, Rajasthan.",
   openGraph: {
-    title: "Hotel O Namaste | Stay Comfortably. Feel at Home.",
+    title: "Hotel Namastay | Stay Comfortably. Feel at Home.",
     description:
       "A comfortable stay, thoughtful facilities, and personal hospitality — all in one place in Bhiwadi, Rajasthan.",
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         url: "/images/hotel/hero-bg.jpg",
         width: 1200,
         height: 630,
-        alt: "Hotel O Namaste Hotel",
+        alt: "Hotel Namastay Hotel",
       },
     ],
   },

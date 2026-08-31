@@ -7,9 +7,9 @@ import { BookingCTA } from "@/components/home/BookingCTA";
 import { Phone, MessageCircle, Mail, MapPin, ChevronRight, ArrowRight, ExternalLink, ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Hotel O Namaste",
+  title: "Contact Us | Hotel Namastay",
   description:
-    "Get in touch with Hotel O Namaste in Bhiwadi, Rajasthan. Reach our front desk via phone, WhatsApp, email, or message form.",
+    "Get in touch with Hotel Namastay in Bhiwadi, Rajasthan. Reach our front desk via phone, WhatsApp, email, or message form.",
 };
 
 export default function ContactPage() {
@@ -85,7 +85,7 @@ export default function ContactPage() {
                 {/* Map Iframe with Hotel Name Overlay */}
                 <div className="relative w-full h-[340px] sm:h-[400px] bg-[#ebefeb] overflow-hidden">
                   <iframe
-                    title="Hotel O Namaste Location Map"
+                    title="Hotel Namastay Location Map"
                     src={hotel.mapEmbedUrl}
                     style={{ 
                       border: 0,
@@ -106,14 +106,14 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-lg px-4 py-2.5 rounded-xl border border-[#dfe4e0] shadow-lg hover:shadow-xl hover:bg-white transition-all group flex items-center gap-3 z-10 cursor-pointer"
-                    title="Open Hotel O Namaste in Google Maps"
+                    title="Open Hotel Namastay in Google Maps"
                   >
                     <div className="w-8 h-8 rounded-full bg-[#006951] flex items-center justify-center shrink-0 shadow-sm">
                       <MapPin className="w-4 h-4 text-white" />
                     </div>
                     <div className="text-left">
                       <div className="font-display font-semibold text-sm text-[#181d1b] group-hover:text-[#006951] transition-colors flex items-center gap-1.5">
-                        Hotel O Namaste
+                        Hotel Namastay
                         <ArrowUpRight className="w-3.5 h-3.5 text-[#6e7a74] group-hover:text-[#006951] transition-transform group-hover:-translate-y-px group-hover:translate-x-px" />
                       </div>
                       <div className="text-[11px] text-[#6e7a74] mt-0.5">Tatarpur, Bhiwadi · Rajasthan</div>

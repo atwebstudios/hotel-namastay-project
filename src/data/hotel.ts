@@ -1,12 +1,12 @@
 import { HotelConfig } from "@/types/hotel";
 
 export const hotel: HotelConfig = {
-  name: "Hotel O Namaste",
+  name: "Hotel Namastay",
   tagline: "Stay Comfortably. Feel at Home.",
   shortDescription:
     "A comfortable stay, thoughtful facilities, and personal hospitality — all in one place.",
   longDescription:
-    "Hotel O Namaste is an independently operated hotel dedicated to genuine hospitality, pristine cleanliness, and calm comfort in Bhiwadi, Rajasthan. Whether visiting for business or a relaxing stay, our team ensures every detail of your visit is thoughtfully taken care of.",
+    "Hotel Namastay is an independently operated hotel dedicated to genuine hospitality, pristine cleanliness, and calm comfort in Bhiwadi, Rajasthan. Whether visiting for business or a relaxing stay, our team ensures every detail of your visit is thoughtfully taken care of.",
   phone: "+919876543210",
   phoneDisplay: "+91 98765 43210",
   whatsapp: "919876543210",
@@ -35,8 +35,8 @@ export const hotel: HotelConfig = {
 export function getWhatsAppBookingLink(enquiryId?: string): string {
   const number = hotel.whatsapp.replace(/\D/g, "");
   const text = enquiryId
-    ? `Hello Hotel O Namaste, I have submitted booking enquiry *${enquiryId}* and would like to follow up on room availability.`
-    : `Hello Hotel O Namaste, I would like to enquire about room availability and reservations.`;
+    ? `Hello Hotel Namastay, I have submitted booking enquiry *${enquiryId}* and would like to follow up on room availability.`
+    : `Hello Hotel Namastay, I would like to enquire about room availability and reservations.`;
   return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
 }
 
@@ -44,7 +44,7 @@ export function getTelLink(): string {
   return `tel:${hotel.phone.replace(/\s+/g, "")}`;
 }
 
-export function getMailtoLink(subject = "Room Enquiry - Hotel O Namaste"): string {
+export function getMailtoLink(subject = "Room Enquiry - Hotel Namastay"): string {
   return `mailto:${hotel.email}?subject=${encodeURIComponent(subject)}`;
 }
 

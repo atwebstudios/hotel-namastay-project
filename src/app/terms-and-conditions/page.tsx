@@ -5,8 +5,8 @@ import { hotel } from "@/data/hotel";
 import { ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions | Hotel O Namaste",
-  description: "Terms and conditions of stay and website usage for Hotel O Namaste.",
+  title: "Terms and Conditions | Hotel Namastay",
+  description: "Terms and conditions of stay and website usage for Hotel Namastay.",
 };
 
 export default function TermsAndConditionsPage() {

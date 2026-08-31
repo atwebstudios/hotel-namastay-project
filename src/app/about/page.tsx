@@ -6,9 +6,9 @@ import { ChevronRight, Sparkles, Clock, MapPin, ArrowRight } from "lucide-react"
 import { ParallaxImage } from "@/components/ui/ParallaxImage";
 
 export const metadata: Metadata = {
-  title: "About Us | Hotel O Namaste",
+  title: "About Us | Hotel Namastay",
   description:
-    "Learn about Hotel O Namaste, our independent boutique hospitality philosophy, comfortable rooms, and dedicated personal service in Bhiwadi, Rajasthan.",
+    "Learn about Hotel Namastay, our independent boutique hospitality philosophy, comfortable rooms, and dedicated personal service in Bhiwadi, Rajasthan.",
 };
 
 export default function AboutPage() {
@@ -49,14 +49,14 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <ParallaxImage
-              src="/images/hotel/exterior.jpg"
-              alt="Hotel O Namaste Exterior View"
+              src="/images/hotel/exterior.png"
+              alt="Hotel Namastay Exterior View"
               className="lg:col-span-6 h-[380px] sm:h-[500px] rounded-xl shadow-md border border-[#bdc9c2]"
             />
 
             {/* Right: Headline & Narrative */}
             <div className="lg:col-span-6 space-y-6">
-              <span className="label-caps">ABOUT HOTEL O NAMASTE</span>
+              <span className="label-caps">ABOUT HOTEL NAMASTAY</span>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-[#181d1b] leading-[1.15]">
                 Hospitality With a Personal Touch.
               </h1>
@@ -78,7 +78,7 @@ export default function AboutPage() {
                 An Independent Spirit
               </h2>
               <p className="text-[#3e4944] text-base leading-relaxed">
-                Born from a passion for genuine hospitality, Hotel O Namaste is an independently owned hotel in Bhiwadi, Rajasthan. We moved away from standardized hotel experiences to create something more intimate — a place that feels like a meticulously curated home rather than a temporary lodging.
+                Born from a passion for genuine hospitality, Hotel Namastay is an independently owned hotel in Bhiwadi, Rajasthan. We moved away from standardized hotel experiences to create something more intimate — a place that feels like a meticulously curated home rather than a temporary lodging.
               </p>
               <p className="text-[#3e4944] text-base leading-relaxed">
                 Our personal focus means we understand the nuances of a truly relaxing stay. From the selection of linens to the ambient lighting, every decision is guided by a desire to provide a serene escape from the everyday.
@@ -86,8 +86,8 @@ export default function AboutPage() {
             </div>
 
             <ParallaxImage
-              src="/images/hotel/reception.jpg"
-              alt="Hotel O Namaste Reception"
+              src="/images/hotel/reception.png"
+              alt="Hotel Namastay Reception"
               className="lg:col-span-6 h-[360px] sm:h-[440px] rounded-xl shadow-sm border border-[#bdc9c2]"
             />
           </div>
@@ -166,7 +166,7 @@ export default function AboutPage() {
 
             <ParallaxImage
               src="/images/room/room-02.webp"
-              alt="Hotel O Namaste Room Ambience"
+              alt="Hotel Namastay Room Ambience"
               className="lg:col-span-7 h-[320px] sm:h-[400px] rounded-xl shadow-sm border border-[#bdc9c2]"
               sizes="(max-width: 1024px) 100vw, 58vw"
             />

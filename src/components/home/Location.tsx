@@ -15,7 +15,7 @@ export function Location() {
               Connected to Bhiwadi.
             </h2>
             <p className="text-[#3e4944] text-base leading-relaxed">
-              Hotel O Namaste is located directly on the Alwar - Bhiwadi Road
+              Hotel Namastay is located directly on the Alwar - Bhiwadi Road
               opposite Krish Icon in Bhiwadi, Rajasthan, offering a peaceful
               stay with convenient access to industrial hubs and major highways.
             </p>
@@ -90,7 +90,7 @@ export function Location() {
             <div className="bg-white rounded-2xl border border-[#bdc9c2] shadow-md overflow-hidden">
               <div className="relative w-full h-[340px] sm:h-[400px] bg-[#ebefeb] overflow-hidden">
                 <iframe
-                  title="Hotel O Namaste Location Map"
+                  title="Hotel Namastay Location Map"
                   src={hotel.mapEmbedUrl}
                   style={{ 
                     border: 0,

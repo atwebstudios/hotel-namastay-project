@@ -57,7 +57,7 @@ export const ContactFormEmail: React.FC<ContactFormEmailProps> = ({
                   fontWeight: "600",
                 }}
               >
-                HOTEL O NAMASTE
+                HOTEL NAMASTAY
               </h1>
               <p
                 style={{
@@ -149,7 +149,7 @@ export const ContactFormEmail: React.FC<ContactFormEmailProps> = ({
                 color: "#6e7a74",
               }}
             >
-              © {new Date().getFullYear()} Hotel O Namaste
+              © {new Date().getFullYear()} Hotel Namastay
             </td>
           </tr>
         </tbody>

@@ -5,8 +5,8 @@ import { hotel } from "@/data/hotel";
 import { ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Cancellation Policy | Hotel O Namaste",
-  description: "Cancellation, modification, and refund terms for reservations at Hotel O Namaste.",
+  title: "Cancellation Policy | Hotel Namastay",
+  description: "Cancellation, modification, and refund terms for reservations at Hotel Namastay.",
 };
 
 export default function CancellationPolicyPage() {

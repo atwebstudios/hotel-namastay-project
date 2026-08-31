@@ -63,7 +63,7 @@ export function ContactForm() {
         </div>
         <h3 className="font-display text-2xl text-[#181d1b]">Message Received</h3>
         <p className="text-sm text-[#3e4944] max-w-md mx-auto leading-relaxed">
-          Thank you for reaching out to Hotel O Namaste. Our team has received your note and will get back to you shortly.
+          Thank you for reaching out to Hotel Namastay. Our team has received your note and will get back to you shortly.
         </p>
         <button
           type="button"

@@ -1,6 +1,6 @@
-# Hotel O Namaste — Production Website & Booking Enquiry System
+# Hotel Namastay — Production Website & Booking Enquiry System
 
-A production-ready boutique hotel website and booking enquiry system for **Hotel O Namaste** built with Next.js (App Router), TypeScript, Tailwind CSS, and Resend.
+A production-ready boutique hotel website and booking enquiry system for **Hotel Namastay** built with Next.js (App Router), TypeScript, Tailwind CSS, and Resend.
 
 The website follows the **Ethereal Stay / Verdant Sanctuary** aesthetic defined in `DESIGN.md` and matches the Stitch high-fidelity boutique hotel mockups.
 
@@ -121,7 +121,7 @@ Configure your Resend API credentials:
 ```env
 RESEND_API_KEY=re_your_api_key_here
 HOTEL_EMAIL=reservations@hotelonamaste.com
-FROM_EMAIL=Hotel O Namaste <bookings@hotelonamaste.com>
+FROM_EMAIL=Hotel Namastay <bookings@hotelonamaste.com>
 ```
 
 > **Note:** If `RESEND_API_KEY` is not provided in development mode, the mailer runs in safe development simulation mode, logging the enquiry to console and allowing complete end-to-end testing of the UI and success flows.
@@ -175,4 +175,4 @@ The project is optimized for zero-config deployment on Vercel or any modern Node
 
 ## 📜 License
 
-© 2026 Hotel O Namaste. All rights reserved.
+© 2026 Hotel Namastay. All rights reserved.

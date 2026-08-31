@@ -10,10 +10,10 @@ import { BookingCTA } from "@/components/home/BookingCTA";
 import { room } from "@/data/room";
 
 export const metadata: Metadata = {
-  title: `${room.name} | Hotel O Namaste`,
+  title: `${room.name} | Hotel Namastay`,
   description: room.shortDescription,
   openGraph: {
-    title: `${room.name} — Hotel O Namaste`,
+    title: `${room.name} — Hotel Namastay`,
     description: room.shortDescription,
     images: [{ url: room.images[0] }],
   },

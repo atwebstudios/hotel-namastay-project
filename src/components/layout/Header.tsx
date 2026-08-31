@@ -37,20 +37,22 @@ export function Header() {
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-500 ${
           isScrolled
-            ? "bg-white/80 backdrop-blur-xl shadow-sm border-b border-[#bdc9c2]/40 py-3.5"
-            : "bg-transparent py-5"
+            ? "bg-white/80 backdrop-blur-xl shadow-sm border-b border-[#bdc9c2]/40 py-2"
+            : "bg-transparent py-2.5"
         }`}
       >
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 flex items-center justify-between">
           {/* Brand Logo / Wordmark */}
           <Link
             href="/"
-            className="group focus:outline-none"
-            aria-label="Hotel O Namaste Home"
+            className="group focus:outline-none flex items-center gap-2"
+            aria-label="Hotel Namastay Home"
           >
-            <span className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-[#006951] group-hover:text-accent-gold transition-colors duration-300">
-              Hotel O Namaste
-            </span>
+            <img 
+              src="/images/logo.png" 
+              alt="Hotel Namastay Logo" 
+              className="h-12 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+            />
           </Link>
 
           {/* Desktop Navigation */}

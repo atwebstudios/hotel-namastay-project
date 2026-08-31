@@ -73,7 +73,7 @@ export const BookingEnquiryHotelEmail: React.FC<BookingEnquiryHotelEmailProps> =
                   letterSpacing: "0.05em",
                 }}
               >
-                HOTEL O NAMASTE
+                HOTEL NAMASTAY
               </h1>
               <p
                 style={{
@@ -255,7 +255,7 @@ export const BookingEnquiryHotelEmail: React.FC<BookingEnquiryHotelEmailProps> =
                 color: "#6e7a74",
               }}
             >
-              © {new Date().getFullYear()} Hotel O Namaste. Automatic booking notification system.
+              © {new Date().getFullYear()} Hotel Namastay. Automatic booking notification system.
             </td>
           </tr>
         </tbody>

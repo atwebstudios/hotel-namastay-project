@@ -17,7 +17,7 @@ export const faqs: FAQItem[] = [
   },
   {
     id: "room-types",
-    question: "How many types of rooms are available at Hotel O Namaste?",
+    question: "How many types of rooms are available at Hotel Namastay?",
     answer:
       "We focus on doing one thing exceptionally well: we offer our signature Deluxe Room designed with premium linens, air conditioning, en-suite bathroom, and ambient lighting to ensure a serene stay for every guest.",
     category: "Room & Facilities",
@@ -33,7 +33,7 @@ export const faqs: FAQItem[] = [
     id: "couples-policy",
     question: "Are couples and solo travelers allowed?",
     answer:
-      "Yes, couples (including unmarried couples with valid IDs) and solo travelers are warmly welcomed at Hotel O Namaste.",
+      "Yes, couples (including unmarried couples with valid IDs) and solo travelers are warmly welcomed at Hotel Namastay.",
     category: "Rules & Policies",
   },
   {
@@ -45,7 +45,7 @@ export const faqs: FAQItem[] = [
   },
   {
     id: "distance-city",
-    question: "How far is Hotel O Namaste from the city center?",
+    question: "How far is Hotel Namastay from the city center?",
     answer:
       "The hotel is conveniently situated approximately 11.3 km from the main city center, offering both peaceful retreat ambiance and direct access to major transit routes.",
     category: "Booking",

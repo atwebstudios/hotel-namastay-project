@@ -27,26 +27,26 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://hotelonamaste.com"),
   title: {
-    default: "Hotel O Namaste | Comfortable Stay & Direct Booking in Bhiwadi",
-    template: "%s | Hotel O Namaste",
+    default: "Hotel Namastay | Comfortable Stay & Direct Booking in Bhiwadi",
+    template: "%s | Hotel Namastay",
   },
   description:
-    "Discover Hotel O Namaste — a serene stay with comfortable rooms, thoughtful facilities, and personal hospitality in Bhiwadi, Rajasthan.",
+    "Discover Hotel Namastay — a serene stay with comfortable rooms, thoughtful facilities, and personal hospitality in Bhiwadi, Rajasthan.",
   keywords: [
-    "Hotel O Namaste",
+    "Hotel Namastay",
     "Bhiwadi Hotel",
     "Boutique Hotel Rajasthan",
     "Deluxe Room Bhiwadi",
     "Hotel Booking Bhiwadi",
-    "Hotel O Namastay",
+    "Hotel Namastay",
   ],
-  authors: [{ name: "Hotel O Namaste" }],
+  authors: [{ name: "Hotel Namastay" }],
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://hotelonamaste.com",
-    siteName: "Hotel O Namaste",
-    title: "Hotel O Namaste | Stay Comfortably. Feel at Home.",
+    siteName: "Hotel Namastay",
+    title: "Hotel Namastay | Stay Comfortably. Feel at Home.",
     description:
       "A comfortable stay, thoughtful facilities, and personal hospitality — all in one place in Bhiwadi, Rajasthan.",
     images: [
@@ -54,13 +54,13 @@ export const metadata: Metadata = {
         url: "/images/hotel/hero-bg.jpg",
         width: 1200,
         height: 630,
-        alt: "Hotel O Namaste Boutique Hotel",
+        alt: "Hotel Namastay Boutique Hotel",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hotel O Namaste | Stay Comfortably. Feel at Home.",
+    title: "Hotel Namastay | Stay Comfortably. Feel at Home.",
     description:
       "A comfortable stay, thoughtful facilities, and personal hospitality in Bhiwadi, Rajasthan.",
     images: ["/images/hotel/hero-bg.jpg"],

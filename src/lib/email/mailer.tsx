@@ -7,7 +7,7 @@ import { hotel } from "@/data/hotel";
 
 const resendApiKey = process.env.RESEND_API_KEY;
 const hotelEmail = process.env.HOTEL_EMAIL || "reservations@hotelonamaste.com";
-const fromEmail = process.env.FROM_EMAIL || "Hotel O Namaste <bookings@hotelonamaste.com>";
+const fromEmail = process.env.FROM_EMAIL || "Hotel Namastay <bookings@hotelonamaste.com>";
 
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
@@ -38,7 +38,7 @@ export async function sendBookingEnquiryEmails(params: {
     const hotelEmailPromise = resend.emails.send({
       from: fromEmail,
       to: hotelEmail,
-      subject: `New Booking Enquiry — Hotel O Namaste — ${params.enquiryId}`,
+      subject: `New Booking Enquiry — Hotel Namastay — ${params.enquiryId}`,
       react: (
         <BookingEnquiryHotelEmail
           enquiryId={params.enquiryId}
@@ -62,7 +62,7 @@ export async function sendBookingEnquiryEmails(params: {
     const guestEmailPromise = resend.emails.send({
       from: fromEmail,
       to: params.email,
-      subject: `Your Booking Enquiry — Hotel O Namaste — ${params.enquiryId}`,
+      subject: `Your Booking Enquiry — Hotel Namastay — ${params.enquiryId}`,
       react: (
         <BookingEnquiryGuestEmail
           enquiryId={params.enquiryId}
@@ -112,7 +112,7 @@ export async function sendContactEmail(params: {
     await resend.emails.send({
       from: fromEmail,
       to: hotelEmail,
-      subject: `Website Contact — Hotel O Namaste — ${params.subject}`,
+      subject: `Website Contact — Hotel Namastay — ${params.subject}`,
       react: (
         <ContactFormEmail
           fullName={params.fullName}

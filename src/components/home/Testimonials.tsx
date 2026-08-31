@@ -46,7 +46,7 @@ export function Testimonials() {
               Words From Our Visitors
             </h2>
             <p className="text-[#6e7a74] text-sm sm:text-base">
-              Discover why travelers choose Hotel O Namaste for peace, pristine cleanliness, and personalized service.
+              Discover why travelers choose Hotel Namastay for peace, pristine cleanliness, and personalized service.
             </p>
           </div>
 

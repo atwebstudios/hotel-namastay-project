@@ -41,7 +41,7 @@ export function Hero() {
       >
         <Image
           src="/images/hotel/hero-bg.jpg"
-          alt="Hotel O Namaste Boutique Stay Ambiance"
+          alt="Hotel Namastay Boutique Stay Ambiance"
           fill
           priority
           className="object-cover object-center"
@@ -63,7 +63,7 @@ export function Hero() {
           variants={itemVariants}
           className="inline-block label-caps text-xs sm:text-sm text-accent-champagne tracking-[0.2em] mb-4 drop-shadow-md font-semibold"
         >
-          WELCOME TO HOTEL O NAMASTE
+          WELCOME TO HOTEL NAMASTAY
         </motion.span>
 
         {/* Headline */}

@@ -71,7 +71,7 @@ export const BookingEnquiryGuestEmail: React.FC<BookingEnquiryGuestEmailProps> =
                   letterSpacing: "0.05em",
                 }}
               >
-                HOTEL O NAMASTE
+                HOTEL NAMASTAY
               </h1>
               <p
                 style={{
@@ -122,7 +122,7 @@ export const BookingEnquiryGuestEmail: React.FC<BookingEnquiryGuestEmailProps> =
                   margin: "0 0 16px 0",
                 }}
               >
-                We have successfully received your booking enquiry for <strong>Hotel O Namaste</strong>.
+                We have successfully received your booking enquiry for <strong>Hotel Namastay</strong>.
               </p>
               <div
                 style={{
@@ -250,7 +250,7 @@ export const BookingEnquiryGuestEmail: React.FC<BookingEnquiryGuestEmailProps> =
                 color: "#6e7a74",
               }}
             >
-              © {new Date().getFullYear()} Hotel O Namaste. Bhiwadi, Rajasthan, India.
+              © {new Date().getFullYear()} Hotel Namastay. Bhiwadi, Rajasthan, India.
             </td>
           </tr>
         </tbody>

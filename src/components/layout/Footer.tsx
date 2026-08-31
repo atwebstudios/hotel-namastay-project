@@ -7,15 +7,17 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#f0f5f1] border-t border-[#bdc9c2]/60 pt-16 pb-28 sm:pb-14 mt-auto">
+    <footer className="bg-[#f0f5f1] border-t border-[#bdc9c2]/60 pt-10 pb-28 sm:pb-14 mt-auto">
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-[#bdc9c2]/40">
           {/* Col 1: Brand & Tagline */}
           <div className="md:col-span-1 space-y-4">
-            <Link href="/" className="inline-block">
-              <span className="font-display text-2xl font-semibold text-[#006951]">
-                Hotel O Namaste
-              </span>
+            <Link href="/" className="inline-block group">
+              <img 
+                src="/images/logo.png" 
+                alt="Hotel Namastay Logo" 
+                className="h-20 sm:h-28 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+              />
             </Link>
             <p className="text-sm text-[#3e4944] leading-relaxed">
               A sanctuary of quiet luxury, pristine cleanliness, and personal hospitality. Designed for mindful travelers seeking genuine comfort.
@@ -118,7 +120,7 @@ export function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6e7a74]">
           <p>© {currentYear} {hotel.name}. All rights reserved.</p>
           <p className="flex items-center gap-1.5">
-            <span>Made with ❤️ from</span>
+            <span>Made with ❤️ by</span>
             <a
               href="https://www.atwebstudios.com.au"
               target="_blank"

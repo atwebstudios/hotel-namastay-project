@@ -88,7 +88,7 @@ export function Lightbox({
         <div className="relative w-full h-full max-w-5xl max-h-[80vh] flex items-center justify-center">
           <Image
             src={images[currentIndex]}
-            alt={`Hotel O Namaste Room view ${currentIndex + 1}`}
+            alt={`Hotel Namastay Room view ${currentIndex + 1}`}
             fill
             className="object-contain select-none"
             sizes="(max-width: 1024px) 100vw, 1280px"

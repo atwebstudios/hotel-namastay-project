@@ -27,7 +27,7 @@ export const testimonials: TestimonialItem[] = [
     location: "Delhi NCR",
     rating: 5,
     review:
-      "We needed a quality stopover on our road trip and Hotel O Namaste was ideal. 24-hour front desk made our late 11 PM check-in completely seamless, and the safe parking gave us peace of mind.",
+      "We needed a quality stopover on our road trip and Hotel Namastay was ideal. 24-hour front desk made our late 11 PM check-in completely seamless, and the safe parking gave us peace of mind.",
     stayType: "Highway Stopover",
     date: "July 2026",
   },
@@ -57,7 +57,7 @@ export const testimonials: TestimonialItem[] = [
     location: "Mumbai, Maharashtra",
     rating: 5,
     review:
-      "Visited Bhiwadi for manufacturing plant meetings. Hotel O Namaste provided exactly what I needed: a quiet, well-maintained AC room, uninterrupted power backup, and quick morning check-out.",
+      "Visited Bhiwadi for manufacturing plant meetings. Hotel Namastay provided exactly what I needed: a quiet, well-maintained AC room, uninterrupted power backup, and quick morning check-out.",
     stayType: "Business Travel",
     date: "June 2026",
   },

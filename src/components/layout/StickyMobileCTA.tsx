@@ -12,7 +12,7 @@ export function StickyMobileCTA() {
     <div className="fixed bottom-0 inset-x-0 z-30 md:hidden bg-white/80 backdrop-blur-xl border-t border-white/60 p-3 shadow-[0_-10px_40px_rgba(0,105,81,0.08)] flex items-center gap-3">
       <a
         href={getTelLink()}
-        aria-label="Call Hotel O Namaste"
+        aria-label="Call Hotel Namastay"
         className="p-3.5 rounded-lg bg-accent-champagne/40 hover:bg-accent-champagne border border-accent-gold/20 text-[#006951] flex items-center justify-center shrink-0 transition-all shadow-sm"
       >
         <Phone className="w-5 h-5" />
