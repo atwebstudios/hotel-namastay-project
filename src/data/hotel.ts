@@ -11,7 +11,7 @@ export const hotel: HotelConfig = {
   phoneDisplay: "+91 98765 43210",
   whatsapp: "919876543210",
   whatsappDisplay: "+91 98765 43210",
-  email: "reservations@hotelonamaste.com",
+  email: "shwetagowhar@gmail.com",
   address: "Plot no 102A, Alwar - Bhiwadi Rd, opposite krish icon, societynull, Bhiwadi, Tatarpur, Rajasthan 301018",
   locality: "Tatarpur",
   city: "Bhiwadi",
