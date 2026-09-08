@@ -19,7 +19,7 @@ The website follows the **Ethereal Stay / Verdant Sanctuary** aesthetic defined 
   4. *Review:* Stay overview with clear enquiry disclaimer.
   5. *Confirmation Screen:* Generated Enquiry ID (`HN-XXXXXXXX`), direct WhatsApp concierge link, phone `tel:` link, and Back to Home.
 - **Automated Resend Email Notifications:**
-  - **Hotel Staff Notification:** Instant email to `HOTEL_EMAIL` with guest and stay parameters.
+  - **Hotel Staff Notification:** Instant email to `RESEND_BUSINESS_EMAIL` with guest and stay parameters.
   - **Guest Acknowledgement Email:** Instant email with reference ID and explanation that team will contact within 1–2 hours.
 - **Contact Inquiries Form:** Client + server Zod validation, rate limiting, and email delivery to hotel desk.
 - **Centralized Data Architecture:** All hotel details, rooms, facilities, FAQs, and reviews isolated in `src/data/`.
@@ -120,8 +120,9 @@ cp .env.example .env.local
 Configure your Resend API credentials:
 ```env
 RESEND_API_KEY=re_your_api_key_here
-HOTEL_EMAIL=reservations@hotelonamaste.com
-FROM_EMAIL=Hotel Namastay <bookings@hotelonamaste.com>
+RESEND_FROM_EMAIL=Hotel Namastay <bookings@namastaybhiwadi.in>
+RESEND_BUSINESS_EMAIL=your-business-inbox@gmail.com
+RESEND_CONFIRMATION_EMAIL=Hotel Namastay <no-reply@namastaybhiwadi.in>
 ```
 
 > **Note:** If `RESEND_API_KEY` is not provided in development mode, the mailer runs in safe development simulation mode, logging the enquiry to console and allowing complete end-to-end testing of the UI and success flows.
@@ -168,7 +169,7 @@ The project is optimized for zero-config deployment on Vercel or any modern Node
 
 1. Push your repository to GitHub.
 2. Import the project into [Vercel](https://vercel.com).
-3. Add the environment variables (`RESEND_API_KEY`, `HOTEL_EMAIL`, `FROM_EMAIL`) in the Vercel Project Settings.
+3. Add the environment variables (`RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `RESEND_BUSINESS_EMAIL`, `RESEND_CONFIRMATION_EMAIL`) in the Vercel Project Settings.
 4. Deploy!
 
 ---

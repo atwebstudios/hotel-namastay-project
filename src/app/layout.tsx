@@ -25,7 +25,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hotelonamaste.com"),
+  metadataBase: new URL("https://namastaybhiwadi.in"),
   title: {
     default: "Hotel Namastay | Comfortable Stay & Direct Booking in Bhiwadi",
     template: "%s | Hotel Namastay",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://hotelonamaste.com",
+    url: "https://namastaybhiwadi.in",
     siteName: "Hotel Namastay",
     title: "Hotel Namastay | Stay Comfortably. Feel at Home.",
     description:
@@ -81,7 +81,7 @@ export default function RootLayout({
     "@type": "Hotel",
     name: hotel.name,
     description: hotel.shortDescription,
-    image: "https://hotelonamaste.com/images/hotel/hero-bg.jpg",
+    image: "https://namastaybhiwadi.in/images/hotel/hero-bg.jpg",
     telephone: hotel.phone,
     email: hotel.email,
     address: {

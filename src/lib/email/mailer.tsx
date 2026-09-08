@@ -6,8 +6,16 @@ import { ContactFormEmail } from "@/emails/ContactFormEmail";
 import { hotel } from "@/data/hotel";
 
 const resendApiKey = process.env.RESEND_API_KEY;
-const hotelEmail = process.env.HOTEL_EMAIL || "reservations@hotelonamaste.com";
-const fromEmail = process.env.FROM_EMAIL || "Hotel Namastay <bookings@hotelonamaste.com>";
+// Inbox that receives booking enquiries and contact-form submissions.
+const businessEmail = process.env.RESEND_BUSINESS_EMAIL || "shwetagowhar@gmail.com";
+// "From" address for hotel-facing notification emails (verified domain).
+const fromEmail = process.env.RESEND_FROM_EMAIL || "Hotel Namastay <bookings@namastaybhiwadi.in>";
+// "From" address for guest-facing confirmation/acknowledgement emails (verified domain).
+const confirmationEmail =
+  process.env.RESEND_CONFIRMATION_EMAIL || "Hotel Namastay <no-reply@namastaybhiwadi.in>";
+// "From" address for website contact-form emails (verified domain).
+const contactFromEmail =
+  process.env.RESEND_CONTACT_EMAIL || "Hotel Namastay <contact@namastaybhiwadi.in>";
 
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
@@ -37,7 +45,8 @@ export async function sendBookingEnquiryEmails(params: {
     // 1. Send Hotel Notification Email
     const hotelEmailPromise = resend.emails.send({
       from: fromEmail,
-      to: hotelEmail,
+      to: businessEmail,
+      replyTo: params.email,
       subject: `New Booking Enquiry — Hotel Namastay — ${params.enquiryId}`,
       react: (
         <BookingEnquiryHotelEmail
@@ -60,8 +69,9 @@ export async function sendBookingEnquiryEmails(params: {
 
     // 2. Send Guest Acknowledgement Email
     const guestEmailPromise = resend.emails.send({
-      from: fromEmail,
+      from: confirmationEmail,
       to: params.email,
+      replyTo: businessEmail,
       subject: `Your Booking Enquiry — Hotel Namastay — ${params.enquiryId}`,
       react: (
         <BookingEnquiryGuestEmail
@@ -110,8 +120,9 @@ export async function sendContactEmail(params: {
     }
 
     await resend.emails.send({
-      from: fromEmail,
-      to: hotelEmail,
+      from: contactFromEmail,
+      to: businessEmail,
+      replyTo: params.email,
       subject: `Website Contact — Hotel Namastay — ${params.subject}`,
       react: (
         <ContactFormEmail

@@ -44,32 +44,52 @@ export const ContactFormEmail: React.FC<ContactFormEmailProps> = ({
           <tr>
             <td
               style={{
-                backgroundColor: "#006951",
-                padding: "24px 32px",
+                backgroundColor: "#ffffff",
+                padding: "28px 32px",
                 textAlign: "center",
+                borderBottom: "1px solid #ebefeb",
               }}
             >
-              <h1
-                style={{
-                  margin: 0,
-                  color: "#ffffff",
-                  fontSize: "22px",
-                  fontWeight: "600",
-                }}
-              >
-                HOTEL NAMASTAY
-              </h1>
-              <p
-                style={{
-                  margin: "6px 0 0 0",
-                  color: "#c5ebdb",
-                  fontSize: "13px",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.08em",
-                }}
-              >
-                Website Contact Message
-              </p>
+              <table align="center" border={0} cellPadding={0} cellSpacing={0}>
+                <tbody>
+                  <tr>
+                    <td style={{ verticalAlign: "middle", paddingRight: "18px" }}>
+                      <img
+                        src="https://namastaybhiwadi.in/images/logo.png"
+                        alt="Hotel Namastay"
+                        width={110}
+                        style={{ display: "block", border: 0, width: "110px", height: "auto" }}
+                      />
+                    </td>
+                    <td style={{ verticalAlign: "middle", textAlign: "left" }}>
+                      <h1
+                        style={{
+                          margin: 0,
+                          color: "#006951",
+                          fontFamily: "'Georgia', 'Times New Roman', serif",
+                          fontSize: "25px",
+                          fontWeight: "700",
+                          letterSpacing: "0.03em",
+                        }}
+                      >
+                        HOTEL NAMASTAY
+                      </h1>
+                      <p
+                        style={{
+                          margin: "8px 0 0 0",
+                          color: "#a07d3e",
+                          fontFamily: "'Georgia', 'Times New Roman', serif",
+                          fontSize: "12px",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.12em",
+                        }}
+                      >
+                        Website Contact Message
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </td>
           </tr>
 
@@ -149,6 +169,13 @@ export const ContactFormEmail: React.FC<ContactFormEmailProps> = ({
                 color: "#6e7a74",
               }}
             >
+              <a
+                href="https://namastaybhiwadi.in"
+                style={{ color: "#006951", fontWeight: 600, textDecoration: "none" }}
+              >
+                www.namastaybhiwadi.in
+              </a>
+              <br />
               © {new Date().getFullYear()} Hotel Namastay
             </td>
           </tr>
